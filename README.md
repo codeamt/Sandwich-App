@@ -36,7 +36,7 @@ The user journey for this app goes as follows:
 - See details page for more info about that particular sandwich. 
 
 
-With this in mind, the second goal of this project was to bind Sandwich data to the child views of their retlative Detail Activity UIs
+With this in mind, the second goal of this project was to bind Sandwich data to the child views of their relative Detail Activity UIs.
 
 To achieve this, the JSON conversion method is called from inside a click listener. When a sandwich name is clicked, the Detail View's fragments are inflated and populated.  
 
