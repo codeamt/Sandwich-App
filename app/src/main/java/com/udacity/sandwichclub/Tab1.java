@@ -15,7 +15,6 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 import java.util.List;
 
 public class Tab1 extends android.support.v4.app.Fragment {
-
     /* Instantiate Vars for Tab1 Fragment */
     TextView nameView;
     TextView origin;
@@ -24,7 +23,6 @@ public class Tab1 extends android.support.v4.app.Fragment {
     Intent intent;
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -54,22 +52,18 @@ public class Tab1 extends android.support.v4.app.Fragment {
         origin = rootView.findViewById(R.id.origin_tv);
         aka = rootView.findViewById(R.id.also_known_tv);
         descView = rootView.findViewById(R.id.description_tv);
-
-
+        
         /* Avoid NullException Error then Populate UI */
         if(sandwich != null) {
             origin.setText(edgeCase(sandwich.getPlaceOfOrigin()));
             descView.setText(edgeCase(sandwich.getDescription()));
             nameView.setText(edgeCase(sandwich.getMainName()));
-
             /* handle attributes populated with array items */
             //other names for sandwich
             List<String> other_names = sandwich.getAlsoKnownAs();
             String merge = makeList(other_names);
             aka.setText(edgeCase(merge));
         }
-
-
         /* Return RootView to be Inflated in Detail Activity Code */
         return rootView;
     }
